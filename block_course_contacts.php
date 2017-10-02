@@ -217,7 +217,7 @@ class block_course_contacts extends block_base {
 
                         // check block configuration for use_altname to determine the name to display.
                         if ($this->config->use_altname == 1 && $contact->alternatename != '') {
-                                $content .= $contact->alternatename;
+                                $content .= $this->shorten_name($contact->alternatename);
                         } else {
                             // use first and last names and truncate as necessary.
                                 $content .= $this->shorten_name($contact->firstname)." ".$this->shorten_name($contact->lastname);
